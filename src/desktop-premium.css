@@ -1,0 +1,165 @@
+/* Kira Desktop Premium Skin: dark / gold */
+
+.kira-desktop-app {
+  position: relative;
+  background:
+    radial-gradient(circle at 50% -12%, rgba(184,150,12,0.11), transparent 28%),
+    radial-gradient(circle at 86% 16%, rgba(169,201,255,0.08), transparent 32%),
+    #000;
+}
+
+.kira-desktop-app::before {
+  content: '';
+  position: fixed;
+  inset: 34px 0 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.23;
+  background:
+    linear-gradient(115deg, transparent 0 36%, rgba(184,150,12,0.07) 43%, transparent 51%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.018) 0 1px, transparent 1px 72px);
+  mix-blend-mode: screen;
+  animation: kira-premium-scan 9s linear infinite;
+}
+
+.kira-desktop-app::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background:
+    linear-gradient(rgba(255,255,255,0.021) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.014) 1px, transparent 1px);
+  background-size: 96px 96px;
+  mask-image: radial-gradient(circle at 50% 38%, black 0%, transparent 72%);
+}
+
+.kira-desktop-titlebar {
+  box-shadow: 0 1px 0 rgba(184,150,12,0.08), 0 18px 48px rgba(0,0,0,0.34);
+}
+
+.kira-desktop-mark {
+  color: rgba(214,226,246,0.9);
+  text-shadow: 0 0 18px rgba(184,150,12,0.28);
+}
+
+.kira-gui-hero {
+  border-color: rgba(184,150,12,0.14);
+  background:
+    radial-gradient(circle at 51% 43%, rgba(169,201,255,0.13), transparent 28%),
+    radial-gradient(circle at 18% 8%, rgba(184,150,12,0.14), transparent 32%),
+    radial-gradient(circle at 82% 90%, rgba(124,58,237,0.1), transparent 30%),
+    linear-gradient(135deg, rgba(255,255,255,0.055), rgba(255,255,255,0.01));
+}
+
+.kira-gui-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.34;
+  background: linear-gradient(120deg, transparent 12%, rgba(255,226,132,0.09), transparent 38%);
+  transform: translateX(-120%);
+  animation: kira-gold-sweep 7.5s ease-in-out infinite;
+}
+
+.kira-gui-core {
+  box-shadow:
+    0 0 0 1px rgba(184,150,12,0.08),
+    0 0 70px rgba(169,201,255,0.1),
+    0 0 110px rgba(184,150,12,0.065);
+}
+
+.kira-gui-core-ring {
+  border-color: rgba(214,226,246,0.18);
+  box-shadow:
+    inset 0 0 38px rgba(169,201,255,0.055),
+    0 0 44px rgba(184,150,12,0.1);
+}
+
+.kwidget {
+  position: relative;
+  overflow: hidden;
+}
+
+.kwidget::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    radial-gradient(circle at 22% 0%, rgba(184,150,12,0.08), transparent 34%),
+    linear-gradient(135deg, rgba(255,255,255,0.03), transparent 40%);
+  transition: opacity 180ms ease;
+}
+
+.kwidget:hover::before {
+  opacity: 1;
+}
+
+.kwidget:hover {
+  transform: translateY(-2px);
+  border-color: rgba(214,226,246,0.16);
+  box-shadow:
+    0 16px 48px rgba(0,0,0,0.22),
+    0 0 36px rgba(184,150,12,0.055),
+    inset 0 1px 0 rgba(255,255,255,0.07);
+}
+
+.kira-status-rail {
+  border-color: rgba(184,150,12,0.09);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.045);
+}
+
+.kira-status-pill-hot {
+  box-shadow: 0 0 22px rgba(184,150,12,0.08);
+}
+
+.memory-graph-shell,
+.agent-orbit-shell {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.memory-graph-shell::after,
+.agent-orbit-shell::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 34%;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(184,150,12,0.045));
+}
+
+.voice-stage {
+  box-shadow:
+    0 28px 90px rgba(0,0,0,0.52),
+    0 0 80px rgba(169,201,255,0.08),
+    inset 0 1px 0 rgba(214,226,246,0.08);
+}
+
+.kira-command-palette {
+  border-color: rgba(184,150,12,0.16);
+  box-shadow:
+    0 36px 110px rgba(0,0,0,0.66),
+    0 0 58px rgba(184,150,12,0.08),
+    0 0 44px rgba(169,201,255,0.055);
+}
+
+@keyframes kira-premium-scan {
+  from { transform: translateX(-34%); }
+  to { transform: translateX(34%); }
+}
+
+@keyframes kira-gold-sweep {
+  0%, 56% { transform: translateX(-120%); }
+  82%, 100% { transform: translateX(120%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kira-desktop-app::before,
+  .kira-gui-hero::after {
+    animation: none !important;
+  }
+}
